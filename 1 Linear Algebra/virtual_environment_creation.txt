@@ -1,0 +1,31 @@
+# 1. To create a virtual-environment:
+
+# Windows:
+python -m venv ml_lab
+
+# Mac/Linux:
+python -m venv ml_lab
+
+————————————————————————
+
+# 2.To activate a virtual-environment:
+
+# Windows:
+ml_lab\Scripts\activate
+
+# Mac/Linux:
+source ml_lab\Scripts/bin/activate
+
+————————————————————————
+
+# 3. Upgrade PIP package:
+python -m pip install --upgrade pip
+
+————————————————————————
+
+# 4. Once done with exercises/programming please de-activate the environment:
+
+# Windows/Mac/Linux::
+deactivate
+
+
