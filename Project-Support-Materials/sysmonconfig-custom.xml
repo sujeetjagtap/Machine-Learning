@@ -1,0 +1,25 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <!-- Event ID 1: Process Creation -->
+    <ProcessCreate onmatch="include">
+      <Image condition="begin with">C:\</Image>
+    </ProcessCreate>
+    
+    <!-- Event ID 3: Network Connection -->
+    <NetworkConnect onmatch="include">
+      <Image condition="begin with">C:\</Image>
+    </NetworkConnect>
+    
+    <!-- Event ID 11: File Creation -->
+    <FileCreate onmatch="include">
+      <TargetFilename condition="contains">\Users\</TargetFilename>
+      <TargetFilename condition="contains">\Temp\</TargetFilename>
+    </FileCreate>
+    
+    <!-- Event ID 12-14: Registry Events -->
+    <RegistryEvent onmatch="include">
+      <TargetObject condition="contains">CurrentVersion\Run</TargetObject>
+      <TargetObject condition="contains">CurrentVersion\Windows\Run</TargetObject>
+    </RegistryEvent>
+  </EventFiltering>
+</Sysmon>
