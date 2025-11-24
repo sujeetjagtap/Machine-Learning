@@ -1,0 +1,13 @@
+# Create project directory
+mkdir -p ~/CTI_Pipeline
+cd ~/CTI_Pipeline
+
+# Install osquery via Homebrew
+brew update
+brew install osquery
+
+# Verify installation
+osqueryi --version
+
+# Alternative: Download from official site
+# https://osquery.io/downloads/official/

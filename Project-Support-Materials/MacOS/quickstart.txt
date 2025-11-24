@@ -1,0 +1,13 @@
+# 1. Clone/create project
+mkdir ~/CTI_Pipeline && cd ~/CTI_Pipeline
+
+# 2. Install osquery
+brew install osquery
+
+# 3. Run complete setup
+chmod +x setup_macos_pipeline.sh
+./setup_macos_pipeline.sh
+
+# 4. Validate
+chmod +x validate_pipeline.py
+python3 validate_pipeline.py

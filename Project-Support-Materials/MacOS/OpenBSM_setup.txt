@@ -1,0 +1,20 @@
+# Enable audit daemon
+sudo audit -s
+
+# Configure audit rules
+sudo cat > /etc/security/audit_control << 'EOF'
+# Audit control configuration
+dir:/var/audit
+flags:lo,aa,ad,fd,fm,-all,^-fc,^-cl
+minfree:5
+naflags:lo,aa
+policy:cnt,argv
+filesz:2M
+expire-after:10d
+EOF
+
+# Start audit daemon
+sudo audit -s
+
+# Verify it's running
+sudo audit -n
